@@ -1,36 +1,33 @@
+#include "cpputils/graphics/image.h"
 #ifndef GAME_ELEMENT_H
 #define GAME_ELEMENT_H
-#include "cpputils/graphics/image.h"
 class GameElement {
  public:
-  GameElement() : GameElement(0, 0, 50, 50) {}
+  GameElement() : x_(0), y_(0), width_(50), height_(50) {}
   GameElement(int x, int y, int width, int height)
-      : x_(x), y_(y), height_(height), width_(width) {}
-
- public:
+      : x_(x), y_(y), width_(width), height_(height), is_active(true) {}
   void SetX(int x) { x_ = x; }
   void SetY(int y) { y_ = y; }
-  void SetIsActive(bool is_active) { is_active_ = is_active; }
+  void SetIsActive(bool active) { is_active = active; }
+  void SetWidth(int width) { width_ = width; }
+  void SetHeight(int height) { height_ = height; }
   int GetX() const { return x_; }
   int GetY() const { return y_; }
   int GetWidth() const { return width_; }
   int GetHeight() const { return height_; }
-  bool GetIsActive() const { return is_active_; }
-  bool IntersectsWith(GameElement* other);
-  bool IsOutOfBounds(const graphics::Image& screen);
-  virtual void Draw(graphics::Image& game_screen) = 0;
-  virtual void Move(const graphics::Image& game_screen) = 0;
+  bool GetIsActive() const { return is_active; }
+  bool IntersectsWith(GameElement *characters);
+  bool IsOutOfBounds(const graphics::Image &image);
+  virtual void Draw(graphics::Image &screen_) = 0;
+  virtual void Move(const graphics::Image &image) = 0;
 
  protected:
-  void PadPoints(std::vector<int>& points, int pad_x, int pad_y);
-
- protected:
-  int x_ = 0;
-  int y_ = 0;
+  int x_;
+  int y_;
 
  private:
-  int width_ = 50;
-  int height_ = 50;
-  bool is_active_ = true;
+  int width_;
+  int height_;
+  bool is_active;
 };
 #endif

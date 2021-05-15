@@ -1,45 +1,43 @@
-#ifndef GAME_H
-#define GAME_H
-#include <memory>
-#include <vector>
 #include "cpputils/graphics/image_event.h"
 #include "opponent.h"
 #include "player.h"
+#ifndef GAME_H
+#define GAME_H
 class Game : public graphics::AnimationEventListener,
              public graphics::MouseEventListener {
  public:
-  Game() : Game(800, 600) {}
-  Game(int width, int height) : game_screen_(width, height) {}
-  graphics::Image& GetGameScreen() { return game_screen_; }
-  std::vector<std::unique_ptr<Opponent>>& GetOpponents() { return opponents_; }
-  std::vector<std::unique_ptr<OpponentProjectile>>& GetOpponentProjectiles() {
-    return opponent_projectiles_;  // may need to be a & or *
+  Game() { screen_.Initialize(800, 600); }
+  Game(int width, int height) { screen_.Initialize(width, height); }
+  graphics::Image &GetGameScreen() { return screen_; }
+  std::vector<std::unique_ptr<PlayerProjectile>> &GetPlayerProjectiles() {
+    return playProj;
   }
-  std::vector<std::unique_ptr<PlayerProjectile>>& GetPlayerProjectiles() {
-    return player_projectiles_;
+  std::vector<std::unique_ptr<OpponentProjectile>> &GetOpponentProjectiles() {
+    return opProj;
   }
-  Player& GetPlayer() { return my_player_; }
+  std::vector<std::unique_ptr<Opponent>> &GetOpponents() { return opponent; }
+  Player &GetPlayer() { return player; }
   void Init();
   void CreateOpponents();
   void MoveGameElements();
   void FilterIntersections();
   void UpdateScreen();
-  void Start();
-  void OnMouseEvent(const graphics::MouseEvent& event) override;
-  void OnAnimationStep() override;
+  void Start(graphics::Image &game) { game.ShowUntilClosed(); }
+  void OnMouseEvent(const graphics::MouseEvent &event);
+  void OnAnimationStep();
   void RemoveInactive();
-  int GetScore();
-  bool HasLost();
+  int GetScore() { return score; }
+  bool HasLost() { return playerStatus_; }
   void LaunchProjectiles();
 
  private:
-  graphics::Image game_screen_;
-  std::vector<std::unique_ptr<Opponent>> opponents_;
-  std::vector<std::unique_ptr<OpponentProjectile>> opponent_projectiles_;
-  std::vector<std::unique_ptr<PlayerProjectile>> player_projectiles_;
-  Player my_player_;
-  int score_;
+  graphics::Image screen_;
+  std::vector<std::unique_ptr<Opponent>> opponent;
+  std::vector<std::unique_ptr<OpponentProjectile>> opProj;
+  std::vector<std::unique_ptr<PlayerProjectile>> playProj;
+  Player player;
+  int score = 0;
   bool playerStatus_ = true;
-  int Op_On_Screen;
+  int Op_On_Screen = 0;
 };
 #endif
