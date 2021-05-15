@@ -21,3 +21,4 @@ void GameElement::PadPoints(std::vector<int>& points, int pad_x, int pad_y) {
       points[i] += pad_y;
     }
   }
+}
