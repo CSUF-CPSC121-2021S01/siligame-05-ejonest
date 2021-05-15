@@ -3,10 +3,10 @@
 #include "cpputils/graphics/image.h"
 void PlayerProjectile::Draw(graphics::Image &image) {
   image.DrawRectangle(x_ + 2, y_, 1, 5, color1);
-  image.DrawRectangle(x_ + 1, y_ + 1, 3, 3, color1);  
+  image.DrawRectangle(x_ + 1, y_ + 1, 3, 3, color1);
   image.DrawRectangle(x_, y_ + 2, 5, 1, color1);
   image.DrawRectangle(x_ + 2, y_ + 1, 1, 3, color2);
-  image.DrawRectangle(x_ + 1, y_ + 2, 3, 1, color2);  
+  image.DrawRectangle(x_ + 1, y_ + 2, 3, 1, color2);
   image.DrawRectangle(x_ + 2, y_ + 2, 1, 1, color3);
 }
 void Player::Draw(graphics::Image &image) {
@@ -23,7 +23,9 @@ void Player::Draw(graphics::Image &image) {
     }
   }
 }
-void PlayerProjectile::Move(const graphics::Image& screen) { 
-   SetY(GetY() - 3);  
-   if (IsOutOfBounds(screen)) { SetIsActive(false); }
-} 
+void PlayerProjectile::Move(const graphics::Image &screen) {
+  SetY(GetY() - 3);
+  if (IsOutOfBounds(screen)) {
+    SetIsActive(false);
+  }
+}

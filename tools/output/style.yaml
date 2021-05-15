@@ -1,0 +1,14 @@
+---
+MainSourceFile:  /root/sandbox/siligame-05-ejonest/player.cc
+Diagnostics:     
+  - DiagnosticName:  clang-analyzer-core.uninitialized.Assign
+    Message:         The left expression of the compound assignment is an uninitialized value. The computed value will also be garbage
+    FileOffset:      5234
+    FilePath:        game.cc
+    Replacements:    
+  - DiagnosticName:  clang-analyzer-core.UndefinedBinaryOperatorResult
+    Message:         'The left operand of ''=='' is a garbage value'
+    FileOffset:      5270
+    FilePath:        game.cc
+    Replacements:    
+...

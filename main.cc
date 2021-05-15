@@ -10,4 +10,3 @@ int main() {
   mainGame.Start();
   return 0;
 }
-
