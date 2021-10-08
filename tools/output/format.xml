@@ -1,0 +1,54 @@
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='94' length='0'> </replacement>
+<replacement offset='95' length='1'></replacement>
+<replacement offset='485' length='0'> </replacement>
+<replacement offset='486' length='1'></replacement>
+<replacement offset='849' length='0'> </replacement>
+<replacement offset='850' length='1'></replacement>
+<replacement offset='1011' length='0'> </replacement>
+<replacement offset='1012' length='1'></replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='79' length='0'> </replacement>
+<replacement offset='80' length='1'></replacement>
+<replacement offset='269' length='0'> </replacement>
+<replacement offset='270' length='1'></replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='2629' length='0'> </replacement>
+<replacement offset='2630' length='1'></replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='91' length='2'>&#10;</replacement>
+<replacement offset='354' length='2'>&#10;</replacement>
+<replacement offset='557' length='3'>&#10;&#10;</replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='0' length='43'>#include "game_element.h"&#10;#include &lt;memory></replacement>
+<replacement offset='129' length='2'>&#10;</replacement>
+<replacement offset='336' length='3'>&#10;&#10;</replacement>
+<replacement offset='523' length='2'>&#10;</replacement>
+<replacement offset='772' length='3'>&#10;&#10;</replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='102' length='2'>&#10;</replacement>
+<replacement offset='919' length='3'>&#10;&#10;</replacement>
+<replacement offset='952' length='3'>&#10;&#10;</replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='219' length='2'>&#10;</replacement>
+<replacement offset='1114' length='3'>&#10;&#10;</replacement>
+</replacements>

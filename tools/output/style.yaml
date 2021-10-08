@@ -1,0 +1,9 @@
+---
+MainSourceFile:  /root/sandbox/siligame-05-ejonest/player.cc
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'expected ''}'''
+    FileOffset:      824
+    FilePath:        game_element.cc
+    Replacements:    
+...
